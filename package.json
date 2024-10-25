@@ -1,35 +1,25 @@
 {
-  "name": "tapocamera",
+  "name": "Tapocamera",
   "version": "1.0.0",
-  "description": "RTSP camera recording project that records streams to local storage.",
-  "main": "record.js",
+  "description": "A project to record and upload RTSP streams from a Tapo camera to Google Drive.",
+  "main": "src/recordRTSP.js",
   "scripts": {
-    "start": "node record.js",
-    "record": "node record.js"
+    "start": "node src/recordRTSP.js",
+    "upload": "node src/googleDrive.js"
   },
   "keywords": [
-    "rtsp",
-    "camera",
-    "recording",
-    "ffmpeg"
+    "RTSP",
+    "Tapo",
+    "Google Drive",
+    "Recording"
   ],
   "author": "Ansuman Behera",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
-    "node-fetch": "^2.6.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  },
-  "engines": {
-    "node": ">=14.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YourUsername/tapocamera.git"
-  },
-  "bugs": {
-    "url": "https://github.com/YourUsername/tapocamera/issues"
-  },
-  "homepage": "https://github.com/YourUsername/tapocamera#readme"
+    "fluent-ffmpeg": "^2.1.2",
+    "googleapis": "^39.2.0",
+    "dotenv": "^10.0.0",
+    "fs": "0.0.1-security", // fs is a built-in module, but you can include it for clarity
+    "readline": "^1.3.0"
+  }
 }
