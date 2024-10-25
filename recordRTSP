@@ -1,0 +1,33 @@
+const ffmpeg = require('fluent-ffmpeg');
+const path = require('path');
+
+// RTSP URL and output file path
+const cameraIp = '192.168.29.157';
+const rtspPort = '554';
+const streamPath = '/stream1';
+const username = 'AnsumanBehera'; // Replace with your camera username
+const password = 'Anshu2024'; // Replace with your camera password
+
+// Construct the RTSP URL with credentials
+const rtspUrl = `rtsp://${username}:${password}@${cameraIp}:${rtspPort}${streamPath}`;
+const outputFile = path.join(__dirname, 'recorded_video.mp4'); // Output video file
+
+// Function to record the RTSP stream
+function recordRTSP() {
+    ffmpeg(rtspUrl)
+        .outputOptions('-c:v', 'copy') // Use copy codec to avoid re-encoding
+        .outputOptions('-f', 'mp4') // Set output format to MP4
+        .on('start', (command) => {
+            console.log(`FFmpeg process started: ${command}`);
+        })
+        .on('error', (err) => {
+            console.error('Error occurred: ' + err.message);
+        })
+        .on('end', () => {
+            console.log('Recording finished successfully.');
+        })
+        .save(outputFile); // Save the output file
+}
+
+// Start recording
+recordRTSP();
