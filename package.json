@@ -1,0 +1,35 @@
+{
+  "name": "tapocamera",
+  "version": "1.0.0",
+  "description": "RTSP camera recording project that records streams to local storage.",
+  "main": "record.js",
+  "scripts": {
+    "start": "node record.js",
+    "record": "node record.js"
+  },
+  "keywords": [
+    "rtsp",
+    "camera",
+    "recording",
+    "ffmpeg"
+  ],
+  "author": "Ansuman Behera",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=14.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YourUsername/tapocamera.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YourUsername/tapocamera/issues"
+  },
+  "homepage": "https://github.com/YourUsername/tapocamera#readme"
+}
